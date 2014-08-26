@@ -1,0 +1,12 @@
+{
+	"name": "webvimark/module-seo-panel",
+	"description": "SEO panel",
+	"autoload": {
+		"psr-4": {
+			"webvimark\\modules\\SeoPanel\\": ""
+		}
+	},
+	"require": {
+		"webvimark/components": "dev-master"
+	}
+}
