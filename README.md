@@ -31,7 +31,7 @@ In your config/web.php
 		...
 
 		'seo-panel' => [
-			'class' => 'webvimark\webvimark\modules\SeoPanel\SeoPanelModule',
+			'class' => 'webvimark\modules\SeoPanel\SeoPanelModule',
 		],
 
 		...
