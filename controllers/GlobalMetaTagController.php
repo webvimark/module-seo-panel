@@ -23,15 +23,8 @@ class GlobalMetaTagController extends AdminDefaultController
 	 */
 	public $modelSearchClass = 'webvimark\modules\SeoPanel\models\search\GlobalMetaTagSearch';
 
-	public function behaviors()
-	{
-		return [
-			'verbs' => [
-				'class' => VerbFilter::className(),
-				'actions' => [
-					'delete' => ['post'],
-				],
-			],
-		];
-	}
+	/**
+	 * @var string
+	 */
+	public $layout = '//back';
 }
