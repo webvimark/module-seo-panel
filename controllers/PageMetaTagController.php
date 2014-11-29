@@ -23,5 +23,8 @@ class PageMetaTagController extends AdminDefaultController
 	 */
 	public $modelSearchClass = 'webvimark\modules\SeoPanel\models\search\PageMetaTagSearch';
 
+	/**
+	 * @var string
+	 */
 	public $layout = '//back';
 }

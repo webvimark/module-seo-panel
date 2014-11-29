@@ -23,5 +23,8 @@ class GlobalMetaTagController extends AdminDefaultController
 	 */
 	public $modelSearchClass = 'webvimark\modules\SeoPanel\models\search\GlobalMetaTagSearch';
 
+	/**
+	 * @var string
+	 */
 	public $layout = '//back';
 }
