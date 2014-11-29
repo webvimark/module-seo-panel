@@ -17,11 +17,14 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Cancel' => '',
+    'Create' => '',
     'Creating global meta tag' => '',
     'Creating meta tag by url' => '',
     'Description' => '',
     'Details of the global meta tag' => '',
     'Details of the meta tag by url' => '',
+    'Edit' => '',
     'Editing global meta tag' => '',
     'Editing meta tag by url' => '',
     'Global meta tags' => '',
@@ -31,6 +34,7 @@ return [
     'Meta tags by url' => '',
     'Page url' => '',
     'Reset' => '',
+    'Save' => '',
     'Search' => '',
     'Title' => '',
     'Link to the page' => '@@@@',

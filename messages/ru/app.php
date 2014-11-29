@@ -17,6 +17,12 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Cancel' => 'Отменить',
+    'Create' => 'Создать',
+    'Edit' => 'Редактировать',
+    'Meta tag content' => '',
+    'Meta tag name' => '',
+    'Save' => 'Сохранить',
     'Creating global meta tag' => 'Создание глобального мета тега',
     'Creating meta tag by url' => 'Создание мета тега страницы',
     'Description' => 'Описание',
@@ -26,8 +32,6 @@ return [
     'Editing meta tag by url' => 'Редактирвание мета тега страницы',
     'Global meta tags' => 'Глобальные мета теги',
     'Keywords' => 'Ключевые слова',
-    'Meta tag content' => '',
-    'Meta tag name' => '',
     'Meta tags by url' => 'Мета теги страниц',
     'Page url' => 'Ссылка на страницу',
     'Reset' => 'Сбросить',
