@@ -1,8 +1,7 @@
 <?php
 
+use webvimark\modules\SeoPanel\SeoPanelModule;
 use yii\helpers\Html;
-use yii\helpers\Url;
-use yii\helpers\ArrayHelper;
 use yii\widgets\Pjax;
 use webvimark\extensions\GridBulkActions\GridBulkActions;
 use webvimark\extensions\GridPageSize\GridPageSize;
@@ -11,10 +10,10 @@ use yii\grid\GridView;
 /**
  * @var yii\web\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var webvimark\modules\SeoPanel\models\search\PageMetaTagSearch $searchModel
+ * @var webvimark\modules\SeoPanel\models\search\GlobalMetaTagSearch $searchModel
  */
 
-$this->title = 'Мета теги страниц';
+$this->title = SeoPanelModule::t('app', 'Meta tags by url');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="page-meta-tag-index">
@@ -22,25 +21,17 @@ $this->params['breadcrumbs'][] = $this->title;
 	<?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
 	<div class="panel panel-default">
-		<div class="panel-heading">
-			<strong>
-				<span class="glyphicon glyphicon-th"></span>  <?= Html::encode($this->title) ?>
-			</strong>
-
-			<?= GridPageSize::widget(['pjaxId'=>'page-meta-tag-grid-pjax']) ?>
-		</div>
-
 		<div class="panel-body">
 
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-xs-6">
 					<p>
-						<?= Html::a('<span class="glyphicon glyphicon-plus-sign"></span> ' . 'Создать', ['create'], ['class' => 'btn btn-sm btn-success']) ?>
+						<?= Html::a('<span class="glyphicon glyphicon-plus-sign"></span> ' . Yii::t('app', 'Create'), ['create'], ['class' => 'btn btn-success']) ?>
 					</p>
 				</div>
 
-				<div class="col-sm-6 text-right">
-					<?= GridBulkActions::widget(['gridId'=>'page-meta-tag-grid']) ?>
+				<div class="col-xs-6 text-right">
+					<?= GridPageSize::widget(['pjaxId'=>'page-meta-tag-grid-pjax']) ?>
 				</div>
 			</div>
 
@@ -58,15 +49,16 @@ $this->params['breadcrumbs'][] = $this->title;
 					'lastPageLabel'=>'>>',
 					'firstPageLabel'=>'<<',
 				],
-				'layout'=>'{items}<div class="row"><div class="col-sm-8">{pager}</div><div class="col-sm-4 text-right">{summary}</div></div>',
-				'filterModel' => $searchModel,
+
+				'layout'=>'{items}<div class="row"><div class="col-sm-8">{pager}</div><div class="col-sm-4 text-right">{summary}'.GridBulkActions::widget(['gridId'=>'page-meta-taggrid']).'</div></div>',
+
+			'filterModel' => $searchModel,
 				'columns' => [
 					['class' => 'yii\grid\SerialColumn', 'options'=>['style'=>'width:10px'] ],
 
-					'url',
 					'title',
-					'keywords',
-					'description',
+			'keywords',
+			'description',
 
 					['class' => 'yii\grid\CheckboxColumn', 'options'=>['style'=>'width:10px'] ],
 					[

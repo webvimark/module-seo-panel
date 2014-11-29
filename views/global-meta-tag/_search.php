@@ -1,5 +1,6 @@
 <?php
 
+use webvimark\modules\SeoPanel\SeoPanelModule;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -30,8 +31,8 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'updated_at') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton(SeoPanelModule::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton(SeoPanelModule::t('app', 'Reset'), ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

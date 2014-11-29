@@ -1,5 +1,6 @@
 <?php
 
+use webvimark\modules\SeoPanel\SeoPanelModule;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -8,28 +9,23 @@ use yii\widgets\DetailView;
  * @var webvimark\modules\SeoPanel\models\GlobalMetaTag $model
  */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Глобальные мета теги', 'url' => ['index']];
+$this->title = SeoPanelModule::t('app', 'Details of the global meta tag') . ': ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => SeoPanelModule::t('app', 'Global meta tags'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="global-meta-tag-view">
 
 
 	<div class="panel panel-default">
-		<div class="panel-heading">
-			<strong>
-				<span class="glyphicon glyphicon-th"></span> <?= Html::encode($this->title) ?>
-			</strong>
-		</div>
 		<div class="panel-body">
 
 			<p>
-				<?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-sm btn-primary']) ?>
-				<?= Html::a('Создать', ['create'], ['class' => 'btn btn-sm btn-success']) ?>
-				<?= Html::a('Удалить', ['delete', 'id' => $model->id], [
+				<?= Html::a(Yii::t('app', 'Edit'), ['update', 'id' => $model->id], ['class' => 'btn btn-sm btn-primary']) ?>
+				<?= Html::a(Yii::t('app', 'Create'), ['create'], ['class' => 'btn btn-sm btn-success']) ?>
+				<?= Html::a(Yii::t('yii', 'Delete'), ['delete', 'id' => $model->id], [
 					'class' => 'btn btn-sm btn-danger pull-right',
 					'data' => [
-						'confirm' => 'Вы уверены, что хотите удалить этот элемент?',
+						'confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
 						'method' => 'post',
 					],
 				]) ?>
@@ -42,8 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
 					[
 						'attribute'=>'active',
 						'value'=>($model->active == 1) ?
-								'<span class="label label-success">Да</span>' :
-								'<span class="label label-warning">Нет</span>',
+								'<span class="label label-success">'.Yii::t('yii', 'Yes').'</span>' :
+								'<span class="label label-warning">'.Yii::t('yii', 'No').'</span>',
 						'format'=>'raw',
 					],
 					'name',

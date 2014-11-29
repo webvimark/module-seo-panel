@@ -2,6 +2,7 @@
 
 namespace webvimark\modules\SeoPanel\models;
 
+use webvimark\modules\SeoPanel\SeoPanelModule;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 
@@ -43,6 +44,7 @@ class GlobalMetaTag extends \webvimark\components\BaseActiveRecord
 		return [
 			[['active', 'created_at', 'updated_at'], 'integer'],
 			[['name', 'content'], 'required'],
+			[['name', 'content'], 'trim'],
 			[['name', 'content'], 'string', 'max' => 255]
 		];
 	}
@@ -53,12 +55,12 @@ class GlobalMetaTag extends \webvimark\components\BaseActiveRecord
 	public function attributeLabels()
 	{
 		return [
-			'id' => 'ID',
-			'active' => 'Активно',
-			'name' => 'Meta tag name',
-			'content' => 'Meta tag content',
-			'created_at' => 'Создано',
-			'updated_at' => 'Обновлено',
+			'id'         => 'ID',
+			'active'     => Yii::t('app', 'Active'),
+			'name'       => SeoPanelModule::t('app', 'Meta tag name'),
+			'content'    => SeoPanelModule::t('app', 'Meta tag content'),
+			'created_at' => Yii::t('app', 'Created'),
+			'updated_at' => Yii::t('app', 'Updated'),
 		];
 	}
 

@@ -6,6 +6,7 @@ namespace webvimark\modules\SeoPanel\helpers;
 
 use webvimark\modules\SeoPanel\models\GlobalMetaTag;
 use webvimark\modules\SeoPanel\models\PageMetaTag;
+use webvimark\modules\SeoPanel\SeoPanelModule;
 use yii\web\View;
 use Yii;
 
@@ -19,9 +20,18 @@ class SeoPanelHelper
 	public static function menuItems()
 	{
 		return [
-			['label' => '<i class="fa fa-globe"></i> Глобальные мета теги', 'url' => ['/seo-panel/global-meta-tag/index']],
-			['label' => '<i class="fa fa-file-audio-o"></i> Мета теги страниц', 'url' => ['/seo-panel/page-meta-tag/index']],
-			['label' => '<i class="fa fa-rocket"></i> Robots.txt', 'url' => ['/seo-panel/robots/index']],
+			[
+				'label' => '<i class="fa fa-angle-double-right"></i> ' . SeoPanelModule::t('app', 'Global meta tags'),
+				'url'   => ['/seo-panel/global-meta-tag/index']
+			],
+			[
+				'label' => '<i class="fa fa-angle-double-right"></i> ' . SeoPanelModule::t('app', 'Meta tags by url'),
+				'url'   => ['/seo-panel/page-meta-tag/index']
+			],
+			[
+				'label' => '<i class="fa fa-angle-double-right"></i> Robots.txt',
+				'url'   => ['/seo-panel/robots/index']
+			],
 		];
 	}
 

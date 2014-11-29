@@ -23,15 +23,5 @@ class PageMetaTagController extends AdminDefaultController
 	 */
 	public $modelSearchClass = 'webvimark\modules\SeoPanel\models\search\PageMetaTagSearch';
 
-	public function behaviors()
-	{
-		return [
-			'verbs' => [
-				'class' => VerbFilter::className(),
-				'actions' => [
-					'delete' => ['post'],
-				],
-			],
-		];
-	}
+	public $layout = '//back';
 }

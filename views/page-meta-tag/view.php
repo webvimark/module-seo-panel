@@ -1,5 +1,6 @@
 <?php
 
+use webvimark\modules\SeoPanel\SeoPanelModule;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -8,28 +9,23 @@ use yii\widgets\DetailView;
  * @var webvimark\modules\SeoPanel\models\PageMetaTag $model
  */
 
-$this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Мета теги страниц', 'url' => ['index']];
+$this->title = SeoPanelModule::t('app', 'Details of the meta tag by url') . ': ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => SeoPanelModule::t('app', 'Meta tags by url'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="page-meta-tag-view">
 
 
 	<div class="panel panel-default">
-		<div class="panel-heading">
-			<strong>
-				<span class="glyphicon glyphicon-th"></span> <?= Html::encode($this->title) ?>
-			</strong>
-		</div>
 		<div class="panel-body">
 
 			<p>
-				<?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-sm btn-primary']) ?>
-				<?= Html::a('Создать', ['create'], ['class' => 'btn btn-sm btn-success']) ?>
-				<?= Html::a('Удалить', ['delete', 'id' => $model->id], [
+				<?= Html::a(Yii::t('app', 'Edit'), ['update', 'id' => $model->id], ['class' => 'btn btn-sm btn-primary']) ?>
+				<?= Html::a(Yii::t('app', 'Create'), ['create'], ['class' => 'btn btn-sm btn-success']) ?>
+				<?= Html::a(Yii::t('yii', 'Delete'), ['delete', 'id' => $model->id], [
 					'class' => 'btn btn-sm btn-danger pull-right',
 					'data' => [
-						'confirm' => 'Вы уверены, что хотите удалить этот элемент?',
+						'confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
 						'method' => 'post',
 					],
 				]) ?>
@@ -39,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'model' => $model,
 				'attributes' => [
 									'id',
-					'url:url',
+					'url',
 					'title',
 					'keywords',
 					'description',

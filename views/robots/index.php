@@ -10,11 +10,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="panel panel-default">
-	<div class="panel-heading">
-		<strong>
-			<i class='fa fa-th'></i> <?= $this->title ?>
-		</strong>
-	</div>
 	<div class="panel-body">
 
 		<?= Html::beginForm() ?>
@@ -22,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		<?= Html::textarea('robots', $file, ['rows'=>25, 'class'=>'form-control']) ?>
 
 		<br/>
-		<?= Html::submitButton('<i class="fa fa-check"></i> Сохранить', ['class'=>'btn btn-success']) ?>
+		<?= Html::submitButton('<i class="fa fa-check"></i> ' . Yii::t('app', 'Save'), ['class'=>'btn btn-success']) ?>
 
 		<?= Html::endForm() ?>
 	</div>

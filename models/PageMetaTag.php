@@ -2,6 +2,7 @@
 
 namespace webvimark\modules\SeoPanel\models;
 
+use webvimark\modules\SeoPanel\SeoPanelModule;
 use Yii;
 use webvimark\helpers\LittleBigHelper;
 use yii\behaviors\TimestampBehavior;
@@ -57,13 +58,13 @@ class PageMetaTag extends \webvimark\components\BaseActiveRecord
 	public function attributeLabels()
 	{
 		return [
-			'id' => 'ID',
-			'url' => 'Ссылка на страницу',
-			'title' => 'Title',
-			'keywords' => 'Keywords',
-			'description' => 'Description',
-			'created_at' => 'Создано',
-			'updated_at' => 'Обновлено',
+			'id'          => 'ID',
+			'url'         => SeoPanelModule::t('app', 'Page url'),
+			'title'       => SeoPanelModule::t('app', 'Title'),
+			'keywords'    => SeoPanelModule::t('app', 'Keywords'),
+			'description' => SeoPanelModule::t('app', 'Description'),
+			'created_at'  => Yii::t('app', 'Created'),
+			'updated_at'  => Yii::t('app', 'Updated'),
 		];
 	}
 
