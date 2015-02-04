@@ -21,7 +21,7 @@ class RobotsController extends BaseController
 		{
 			file_put_contents(Yii::getAlias('@webroot') . '/robots.txt', $_POST['robots']);
 
-			$this->redirect(['index']);
+			return $this->redirect(['index']);
 		}
 
 		$file = file_get_contents(Yii::getAlias('@webroot') . '/robots.txt');
